@@ -99,6 +99,113 @@
     
     
 </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const inputs = form.querySelectorAll('input');
+
+    function showError(input, message) {
+        const errorExisting = input.nextElementSibling;
+        if (errorExisting && errorExisting.classList.contains('error-message')) {
+            errorExisting.remove();
+        }
+
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.color = 'red';
+        errorDiv.textContent = message;
+        input.style.borderColor = 'red';
+        input.parentNode.insertBefore(errorDiv, input.nextSibling);
+    }
+
+    function clearError(input) {
+        input.style.borderColor = '';
+        const errorExisting = input.nextElementSibling;
+        if (errorExisting && errorExisting.classList.contains('error-message')) {
+            errorExisting.remove();
+        }
+    }
+
+    function validateFullName(input) {
+        if (input.value.trim() === '') {
+            showError(input, 'Full name is required');
+            return false;
+        }
+        clearError(input);
+        return true;
+    }
+
+    function validateEmail(input) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(input.value)) {
+            showError(input, 'Invalid email address');
+            return false;
+        }
+        clearError(input);
+        return true;
+    }
+
+    function validatePassword(input) {
+        if (input.value.length < 8) {
+            showError(input, 'Password must be at least 8 characters');
+            return false;
+        }
+        clearError(input);
+        return true;
+    }
+
+    function validatePasswordConfirmation(passwordInput, confirmInput) {
+        if (passwordInput.value !== confirmInput.value) {
+            showError(confirmInput, 'Passwords do not match');
+            return false;
+        }
+        clearError(confirmInput);
+        return true;
+    }
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        let isValid = true;
+
+        const fullNameInput = document.getElementById('full name');
+        const emailInput = document.getElementById('Enter Email');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+
+        if (!validateFullName(fullNameInput)) isValid = false;
+        if (!validateEmail(emailInput)) isValid = false;
+        if (!validatePassword(passwordInput)) isValid = false;
+        if (!validatePasswordConfirmation(passwordInput, confirmPasswordInput)) isValid = false;
+
+        if (isValid) {
+            alert('Form submitted successfully!');
+            form.reset();
+        }
+    });
+
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            switch(input.id) {
+                case 'full name':
+                    validateFullName(input);
+                    break;
+                case 'Enter Email':
+                    validateEmail(input);
+                    break;
+                case 'password':
+                    validatePassword(input);
+                    break;
+                case 'confirmPassword':
+                    validatePasswordConfirmation(
+                        document.getElementById('password'), 
+                        input
+                    );
+                    break;
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>
