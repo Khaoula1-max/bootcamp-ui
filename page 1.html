@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+            fontFamily: { 
+                           pop: ["Poppins", "sans-serif"], 
+                       },
+          colors: {
+            blue:'#60a5fa',
+            clifford: '#da373d',
+            green:'#20DC49',
+            bgr:'#F0F2F5',
+          }
+        }
+      }
+    }
+  </script>
+ 
+
+</head>
+<body class="font-pop">
+  <main class="flex ">
+    <section  class="bg-cover bg-center w-1/2 h-screen " style="background-image: url('/aranprime-5pQZUa5W_0I-unsplash\ 1.png')">
+    <div>
+        <div class="flex flex mx-9  ">
+            <div class="pt-9 flex">
+        <svg   width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.4" d="M7.11396 5.37842L21.2052 0.676134C27.5322 -1.43286 30.9691 2.01964 28.8757 8.34664L24.1734 22.4379C21.0177 31.9205 15.8312 31.9205 12.6755 22.4379L11.2851 18.2511L7.09834 16.8607C-2.36872 13.7207 -2.36872 8.54973 7.11396 5.37842Z" fill="#20DC49"/>
+            <path d="M14.9404 14.2362L20.8925 8.26855L14.9404 14.2362Z" fill="#20DC49"/>
+            <path d="M14.9407 15.4079C14.6439 15.4079 14.3471 15.2986 14.1127 15.0642C13.6597 14.6112 13.6597 13.8613 14.1127 13.4083L20.0492 7.44058C20.5022 6.98754 21.2521 6.98754 21.7051 7.44058C22.1582 7.89363 22.1582 8.64349 21.7051 9.09654L15.7687 15.0642C15.5344 15.2829 15.2375 15.4079 14.9407 15.4079Z" fill="#20DC49"/>
+            </svg>
+            <h1 class="ml-4 pt-1 font-medium">Logo here</h1>
+        </div>
+        </div>
+     <button class="bg-green flex flex px-6 py-2 rounded-full mt-[350px] mx-[50px] ">
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M23.4245 42.8356C33.9785 42.8356 42.5341 34.28 42.5341 23.726C42.5341 13.1721 33.9785 4.61645 23.4245 4.61645C12.8706 4.61645 4.31494 13.1721 4.31494 23.726C4.31494 34.28 12.8706 42.8356 23.4245 42.8356Z" fill="black"/>
+                <path d="M17.0801 23.5541L20.2332 24.3376L18.4178 31.6756C17.9974 33.3955 18.8382 33.9689 20.2905 32.9561L30.1893 26.0957C31.3932 25.2548 31.2212 24.2802 29.788 23.9171L26.6349 23.1337L28.4504 15.7956C28.8708 14.0757 28.0299 13.5024 26.5776 14.5153L16.6788 21.3756C15.4749 22.2165 15.6469 23.191 17.0801 23.5541Z" fill="black"/>
+                </svg> 
+                <p class="mt-3 ml-4">Royal Stock Images</p>
+
+                  
+            </button>
+            <div class="backdrop-blur-lg rounded-lg py-4  px-3 w-[30%] mt-4 ml-[7%] pb-9 mt-3"> 
+                <img src="Group 439.png" alt="" class="h-10 w-9 mr-3"> 
+                <p class="text-start text-sm text-white mt-4"> Best Stock Photos and Videos from across the internet. </p> 
+            </div>
+
+    </div> </section>
+   
+    
+     </div>
+    <section class="w-1/2 mr-9 mt-3">
+        <p class="text-right mt-5">have an account? <a href="#" class="text-green">Sign In!</a></p>
+        <div class="flex justify-center items-center h-screen">
+            <div class="w-full max-w-md bg-white rounded-lg  p-8">
+              <h2 class="text-2xl font-bold mb-6 text-center">Reset Password</h2>
+              <form class="space-y-4 mt-9" >
+                <div>
+                  <input type="password" id="password" name="password" placeholder="password" class=" shadow-xl w-full  p-6   rounded-md outline-none " required>
+               
+                <div>
+                  <input type="password" id="confirmPassword" name="confirmPassword"  placeholder="Confirm password" class="w-full shadow-xl p-6  mt-9 p-3  rounded-md outline-none" required>
+              
+                </div>
+                <button type="submit" class="w-full bg-green hover:bg-darkgreen text-black font-medium py-2 px-4 rounded-md mt-9">Reset Password</button>
+              </form>
+            </div>
+          </div>
+    </section>
+    
+</main>
+
+</body>
+</html>
